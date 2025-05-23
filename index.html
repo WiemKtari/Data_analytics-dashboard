@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mental Health in Tech Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Mental Health in Tech Dashboard</h1>
+
+    <!-- Filters -->
+    <section class="filters">
+      <div>
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="All">All</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="age">Age:</label>
+        <input type="range" id="age" min="18" max="100" value="30" />
+        <span id="age-value">30</span>
+      </div>
+      <div>
+        <label for="country">Country:</label>
+        <select id="country">
+          <option value="All">All</option>
+        </select>
+      </div>
+      <div>
+        <label for="remote">Remote Work:</label>
+        <select id="remote">
+          <option value="All">All</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div>
+        <label for="tech">Tech Company:</label>
+        <select id="tech">
+          <option value="All">All</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <button id="apply-filters">Apply Filters</button>
+    </section>
+
+    <!-- Summary Metrics -->
+    <section class="summary">
+      <div class="metric">
+        <h3>Treatment Rate</h3>
+        <p id="treatment-rate">--%</p>
+      </div>
+      <div class="metric">
+        <h3>Work Interference</h3>
+        <p id="interference-rate">--%</p>
+      </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="chart-container" id="age-treatment-chart"></section>
+    <section class="chart-container" id="remote-treatment-chart"></section>
+    <section class="chart-container" id="benefits-awareness-chart"></section>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toast" style="display:none;">Filters applied successfully!</div>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="common.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

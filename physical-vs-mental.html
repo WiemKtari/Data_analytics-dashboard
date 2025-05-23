@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Dashboard - Physical vs Mental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="logo">Mental Health Insights</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="factors.html">Personal & Workplace Factors</a></li>
+                <li><a href="support.html">Support Analysis</a></li>
+                <li><a href="physical-vs-mental.html" class="active">Physical vs Mental</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="filters">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <label for="country-filter">Country</label>
+                    <select id="country-filter" class="filter-select">
+                        <option value="all">All Countries</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="gender-filter">Gender</label>
+                    <select id="gender-filter" class="filter-select">
+                        <option value="all">All Genders</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="age-range">Age Range</label>
+                    <input type="range" id="age-range" min="18" max="80" value="80" class="slider">
+                    <span id="age-value">Up to 80</span>
+                </div>
+                <button id="apply-filters" class="btn">Apply Filters</button>
+                <button id="reset-filters" class="btn btn-outline">Reset</button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="page-header">
+                <h1>Physical vs Mental Health</h1>
+                <p>Comparing perceptions and consequences of mental vs physical health in the workplace</p>
+            </div>
+
+            <div class="grid-container">
+                <div class="card chart-card">
+                    <h2>Mental Health Consequences</h2>
+                    <div id="mental-consequence-chart" class="chart-container"></div>
+                </div>
+
+                <div class="card chart-card">
+                    <h2>Physical Health Consequences</h2>
+                    <div id="physical-consequence-chart" class="chart-container"></div>
+                </div>
+
+                <div class="card chart-card wide">
+                    <h2>Comparison: Discussing in Interviews</h2>
+                    <div id="interview-comparison-chart" class="chart-container"></div>
+                </div>
+
+                <div class="card chart-card">
+                    <h2>Willingness to Discuss with Coworkers</h2>
+                    <div id="coworkers-chart" class="chart-container"></div>
+                </div>
+
+                <div class="card chart-card">
+                    <h2>Employer's Perception</h2>
+                    <div id="employer-perception-chart" class="chart-container"></div>
+                </div>
+
+                <div class="card chart-card">
+                    <h2>Observed Consequences</h2>
+                    <div id="observed-consequences-chart" class="chart-container"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="physical-vs-mental.js"></script>
+</body>
+</html>
