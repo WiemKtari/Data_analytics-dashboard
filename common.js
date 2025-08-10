@@ -1,4 +1,5 @@
 // common.js
+//test
 document.addEventListener('DOMContentLoaded', () => {
   const applyFiltersBtn = document.getElementById('apply-filters');
   const ageInput = document.getElementById('age');
